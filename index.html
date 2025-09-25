@@ -1,199 +1,396 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TechFlow Solutions — Contact</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechFlow Solutions — Streamlining Business Operations</title>
   <style>
-    :root{--accent:#2563eb;--accent-light:#3b82f6;--muted:#64748b;--bg:#f8fafc;--success:#10b981;--warning:#f59e0b}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:#0f172a}
-    header{background:linear-gradient(90deg,#eef2ff,white);padding:18px 28px;border-bottom:1px solid #e6edf3}
-    .container{max-width:1000px;margin:24px auto;padding:0 18px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-light));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:0 4px 12px rgba(37,99,235,0.3)}
-    nav{margin-left:auto}
-    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:12px}
-    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
-    nav a:hover{background:#eef2ff;color:var(--accent)}
-    .hero{background:white;padding:24px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.04);display:flex;gap:20px;align-items:center}
-    .content{flex:1}
-    .secondary{width:300px;flex-shrink:0}
-    section.filler{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-    .card{background:white;padding:20px;border-radius:12px;border:1px solid #eef2f6;transition:transform 0.2s ease,box-shadow 0.2s ease}
-    .card:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(2,6,23,0.08)}
-    footer.contact{margin-top:22px;background:white;padding:22px;border-radius:12px;border:1px solid #e6edf3}
-    form{display:grid;gap:12px}
-    label{font-size:13px;color:var(--muted)}
-    input[type=text],input[type=email],textarea{padding:10px;border-radius:8px;border:1px solid #e6edf3;font-size:15px}
-    textarea{min-height:110px;resize:vertical}
-    .row{display:flex;gap:10px}
-    .btn{background:var(--accent);color:white;padding:12px 20px;border-radius:8px;border:0;cursor:pointer;font-weight:500;transition:all 0.2s ease}
-    .btn:hover{background:var(--accent-light);transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,99,235,0.3)}
-    .btn[disabled]{opacity:0.55;cursor:not-allowed}
-    .notice{padding:12px;border-radius:8px;background:#fff4f4;border:1px solid #fecaca;color:#991b1b;display:none}
-    .notice.show{display:block}
-    .modal{position:fixed;inset:0;background:rgba(2,6,23,0.45);display:none;align-items:center;justify-content:center}
-    .modal.open{display:flex}
-    .modal .panel{background:white;padding:18px;border-radius:12px;max-width:520px;width:92%}
-    .muted{color:var(--muted);font-size:13px}
-    footer .small{font-size:12px;color:var(--muted);}
-    @media (max-width:640px){.hero{flex-direction:column}.secondary{width:100%}}
+    :root {
+      --accent: #2563eb;
+      --accent-light: #3b82f6;
+      --muted: #64748b;
+      --bg: #f8fafc;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --text: #0f172a;
+      --border: #e6edf3;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    /* Navigation */
+    .navbar {
+      background: white;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(2, 6, 23, 0.04);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+    
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    
+    .nav-links a.active {
+      color: var(--accent);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      padding: 6rem 0;
+      text-align: center;
+    }
+    
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.2s ease;
+    }
+    
+    .cta-button:hover {
+      background: var(--accent-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    }
+    
+    /* About Section */
+    .about {
+      padding: 6rem 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(2, 6, 23, 0.04);
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(2, 6, 23, 0.08);
+    }
+    
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .feature-card p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    
+    /* Stats Section */
+    .stats {
+      background: white;
+      padding: 4rem 0;
+      border-top: 1px solid var(--border);
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    
+    .stat-item h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-item p {
+      color: var(--muted);
+      font-weight: 500;
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--text);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+    
+    .footer p {
+      color: #94a3b8;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container" style="display:flex;align-items:center">
-      <div class="brand">
-        <div class="logo">TF</div>
-        <div>
-          <div style="font-weight:700">TechFlow Solutions</div>
-          <div class="muted" style="font-size:13px">Streamlining business operations</div>
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Docs</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">TF</div>
+        <div class="logo-text">TechFlow Solutions</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
-  <main class="container">
-    <div class="hero">
-      <div class="content">
-        <h1>Get in Touch</h1>
-        <p class="muted">Ready to transform your business operations? Our team of experts is here to help you implement cutting-edge solutions that drive efficiency and growth.</p>
-        <div style="margin-top:12px;display:flex;gap:8px">
-          <button class="btn" onclick="scrollToContact()">Start Your Project</button>
-          <button class="btn" style="background:#eef2ff;color:var(--accent)" onclick="openLearnMore()">View Case Studies</button>
-        </div>
-      </div>
-      <div class="secondary">
-        <div class="card">
-          <h3 style="margin-top:0">Support Resources</h3>
-          <ul class="muted">
-            <li><a href="#" style="color:inherit;text-decoration:none">Documentation</a></li>
-            <li><a href="#" style="color:inherit;text-decoration:none">System Status</a></li>
-            <li><a href="#" style="color:inherit;text-decoration:none">API Reference</a></li>
-            <li><a href="#" style="color:inherit;text-decoration:none">Security Center</a></li>
-          </ul>
-        </div>
-      </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <h1>Streamlining Business Operations</h1>
+      <p>Transform your business with our cutting-edge technology solutions. We help companies optimize their workflows, enhance productivity, and drive sustainable growth.</p>
+      <a href="contact.html" class="cta-button">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd"></path>
+        </svg>
+        Get Started Today
+      </a>
     </div>
+  </section>
 
-    <section class="filler">
-      <div class="card"><h4>Cloud Integration</h4><p class="muted">Seamlessly connect your existing systems with our cloud-native platform for enhanced scalability and performance.</p></div>
-      <div class="card"><h4>Data Analytics</h4><p class="muted">Transform raw data into actionable insights with our advanced analytics dashboard and reporting tools.</p></div>
-      <div class="card"><h4>API Management</h4><p class="muted">Comprehensive API gateway with rate limiting, authentication, and monitoring for secure data exchange.</p></div>
-      <div class="card"><h4>24/7 Support</h4><p class="muted">Round-the-clock technical support from our certified engineers to ensure your systems run smoothly.</p></div>
-    </section>
-
-    <footer id="contact" class="contact">
-      <h2>Start Your Project</h2>
-      <p class="muted">Ready to get started? Fill out the form below and our team will reach out within 24 hours to discuss your requirements.</p>
-
-      <div id="notice" class="notice" role="alert">You must download the app before submitting.</div>
-
-      <form id="contactForm">
-        <div class="row">
-          <div style="flex:1">
-            <label for="name">Full name</label>
-            <input id="name" name="name" type="text" placeholder="Jane Example" required />
-          </div>
-          <div style="width:260px">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="jane@example.com" required />
-          </div>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose TechFlow Solutions?</h2>
+        <p>We combine deep industry expertise with innovative technology to deliver solutions that drive real business value.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">☁️</div>
+          <h3>Cloud Integration</h3>
+          <p>Seamlessly connect your existing systems with our cloud-native platform for enhanced scalability and performance across all your business operations.</p>
         </div>
-
-        <div style="display:flex;gap:10px;align-items:center;margin-top:6px">
-          <button id="submitBtn" class="btn" type="submit">Submit</button>
-          <div id="statusNote" class="muted small">Requirement: <strong>Download our client application</strong></div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Data Analytics</h3>
+          <p>Transform raw data into actionable insights with our advanced analytics dashboard and comprehensive reporting tools that drive informed decision-making.</p>
         </div>
-      </form>
-
-      <p class="small" style="margin-top:10px">Privacy note: We respect your data and never share your information without consent.</p>
-    </footer>
-  </main>
-
-  <!-- Modal -->
-  <div id="modal" class="modal" aria-hidden="true">
-    <div class="panel">
-      <h3>Client Application Required</h3>
-      <p class="muted">To complete your project setup, please download our client application which includes essential tools and configuration files.</p>
-      <div style="display:flex;gap:8px;margin-top:12px">
-        <a href="/download.html" target="_blank" class="btn">Download Client App</a>
-        <button class="btn" id="confirmBtn">I've downloaded the app</button>
-        <button class="btn" id="cancelBtn" style="background:#f3f4f6;color:#111">Cancel</button>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🔧</div>
+          <h3>API Management</h3>
+          <p>Comprehensive API gateway with rate limiting, authentication, and monitoring for secure and efficient data exchange between systems.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Enterprise Security</h3>
+          <p>Bank-grade security protocols and compliance standards to protect your sensitive data and ensure regulatory compliance across all industries.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Performance Optimization</h3>
+          <p>Advanced caching, load balancing, and performance monitoring to ensure your applications run at peak efficiency under any load.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>24/7 Support</h3>
+          <p>Round-the-clock technical support from our certified engineers to ensure your systems run smoothly and your business never stops.</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <script>
-    const form = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const notice = document.getElementById('notice');
-    const modal = document.getElementById('modal');
-    const confirmBtn = document.getElementById('confirmBtn');
-    const cancelBtn = document.getElementById('cancelBtn');
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>500+</h3>
+          <p>Happy Clients</p>
+        </div>
+        <div class="stat-item">
+          <h3>99.9%</h3>
+          <p>Uptime Guarantee</p>
+        </div>
+        <div class="stat-item">
+          <h3>24/7</h3>
+          <p>Expert Support</p>
+        </div>
+        <div class="stat-item">
+          <h3>5+</h3>
+          <p>Years Experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    let appDownloaded = false;
-    let attemptedSubmit = false;
-
-    function updateUI() {
-      if (attemptedSubmit && !appDownloaded) {
-        notice.classList.add('show');
-        submitBtn.disabled = true;
-      } else {
-        notice.classList.remove('show');
-        submitBtn.disabled = false;
-      }
-    }
-
-    function scrollToContact(){document.getElementById('contact').scrollIntoView({behavior:'smooth'})}
-    function openLearnMore(){alert('Please download our client application to complete the project setup process.')}
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (appDownloaded) {
-        alert('Form submitted. Thank you!');
-        form.reset();
-        appDownloaded = false;
-        attemptedSubmit = false;
-        updateUI();
-      } else {
-        attemptedSubmit = true;
-        updateUI();
-        modal.classList.add('open');
-        modal.setAttribute('aria-hidden','false');
-      }
-    });
-
-    confirmBtn.addEventListener('click', () => {
-      appDownloaded = true;
-      attemptedSubmit = false;
-      updateUI();
-      modal.classList.remove('open');
-      alert('You can now submit the form.');
-    });
-
-    cancelBtn.addEventListener('click', () => {
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden','true');
-    });
-
-    window.addEventListener('keydown', (e)=>{
-      if (e.key === 'Escape') {
-        modal.classList.remove('open');
-        modal.setAttribute('aria-hidden','true');
-      }
-    });
-  </script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 TechFlow Solutions. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
+
